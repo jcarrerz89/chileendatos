@@ -6,6 +6,7 @@ export const CATEGORY_LABELS: Record<IndicatorCategory, string> = {
   precios: 'Precios',
   empleo: 'Empleo',
   externo: 'Sector Externo',
+  monetario: 'Politica Monetaria',
 };
 
 export const CATEGORY_COLORS: Record<IndicatorCategory, string> = {
@@ -14,6 +15,7 @@ export const CATEGORY_COLORS: Record<IndicatorCategory, string> = {
   precios: '#d97706',
   empleo: '#7c3aed',
   externo: '#dc2626',
+  monetario: '#0891b2',
 };
 
 export const CHART_COLORS = [

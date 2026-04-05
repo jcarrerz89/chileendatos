@@ -33,6 +33,7 @@ export default async function HomePage() {
   const categoryOrder: IndicatorCategory[] = [
     "actividad",
     "precios",
+    "monetario",
     "empleo",
     "fiscal",
     "externo",

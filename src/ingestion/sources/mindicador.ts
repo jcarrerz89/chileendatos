@@ -10,7 +10,7 @@ interface MindicadorResponse {
   }>;
 }
 
-type MindicadorIndicator = 'uf' | 'ivp' | 'dolar' | 'euro' | 'ipc' | 'utm' | 'imacec' | 'tpm' | 'desempleo' | 'bitcoin';
+type MindicadorIndicator = 'uf' | 'ivp' | 'dolar' | 'euro' | 'ipc' | 'utm' | 'imacec' | 'tpm' | 'desempleo' | 'bitcoin' | 'libra_cobre';
 
 function buildUrl(indicator: MindicadorIndicator, year?: number): string {
   if (year) return `${BASE_URL}/${indicator}/${year}`;
@@ -88,5 +88,12 @@ export const mindicadorTPM: SourceFetcher = {
   sourceId: 'mindicador',
   async fetch(params) {
     return fetchIndicator('tpm', '%', params);
+  },
+};
+
+export const mindicadorCobre: SourceFetcher = {
+  sourceId: 'mindicador',
+  async fetch(params) {
+    return fetchIndicator('libra_cobre', 'USD', params);
   },
 };

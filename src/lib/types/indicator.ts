@@ -5,7 +5,8 @@ export type IndicatorCategory =
   | 'actividad'
   | 'precios'
   | 'empleo'
-  | 'externo';
+  | 'externo'
+  | 'monetario';
 
 export interface IndicatorSource {
   name: string;
