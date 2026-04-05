@@ -1,0 +1,7 @@
+{
+  "regions": ["gru1"],
+  "framework": "nextjs",
+  "env": {
+    "GOOGLE_CLOUD_PROJECT": "chileendatos"
+  }
+}
