@@ -29,6 +29,16 @@ export const CHART_COLORS = [
 
 export const CHILE_HIGHLIGHT_COLOR = '#D52B1E';
 
+// Indicators where a decrease is positive (good) for the economy
+// Used to invert trend color logic: green when down, red when up
+export const INVERSE_TREND_INDICATORS = new Set([
+  'desempleo',
+  'inflacion',
+  'ipc',
+  'deuda-publica',
+  'deuda-externa',
+]);
+
 export const SOURCE_IDS = {
   BCCH: 'bcch',
   MINDICADOR: 'mindicador',

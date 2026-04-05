@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #1a1a2e;
+  --chile-red: #D52B1E;
+  --trend-positive: #16a34a;
+  --trend-negative: #dc2626;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border-light: #e5e7eb;
+  --border-subtle: #f3f4f6;
+  --surface-primary: #ffffff;
+  --surface-secondary: #f9fafb;
+  --surface-elevated: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +23,129 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography scale */
+.text-display {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-headline {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.text-body-large {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--text-secondary);
+}
+
+.text-body {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--text-tertiary);
+}
+
+/* Value display for indicators */
+.value-display {
+  font-size: 2.25rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.value-display-hero {
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+/* Section backgrounds */
+.section-hero {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+}
+
+.section-alt {
+  background-color: var(--surface-secondary);
+}
+
+/* Card improvements */
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+/* Recharts overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #f3f4f6;
+}
+
+.recharts-tooltip-wrapper {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Divider */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-light) 20%, var(--border-light) 80%, transparent 100%);
+  margin: 2rem 0;
+}
+
+/* Top accent bar */
+.top-accent {
+  border-top: 3px solid var(--chile-red);
+}
+
+/* Source link styling */
+.source-link {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.source-link:hover {
+  border-bottom-color: #2563eb;
+}
+
+/* Breadcrumb separator */
+.breadcrumb-sep::before {
+  content: "/";
+  margin: 0 0.5rem;
+  color: var(--text-tertiary);
 }
